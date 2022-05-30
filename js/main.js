@@ -1,22 +1,22 @@
-//ALGORITMO 1
-let a = parseInt(prompt("Inserte numero 1 del 1 al 100"));
-let b = parseInt(prompt("Inserte numero 2 del 1 al 100"));
-let c = parseInt(prompt("Inserte numero 3 del 1 al 100"));
+// //ALGORITMO 1
+// let a = parseInt(prompt("Inserte numero 1 del 1 al 100"));
+// let b = parseInt(prompt("Inserte numero 2 del 1 al 100"));
+// let c = parseInt(prompt("Inserte numero 3 del 1 al 100"));
 
-const isNumberValidated = (number) => number >= 1 && number <= 100 //Funcion de retorno rapido verdadero falso
-if (isNumberValidated(a) && isNumberValidated(b) && isNumberValidated(c)) {
-    console.log("Numero valido");
-    if (a>b && a>c){
-        console.log("El numero mayor de los tres es " + a)
-    }   else if
-        (b>a && b>c)
-        console.log("El numero mayor de los tres es " +b)
-        else{
-            console.log("El numero mayor de los tres es " +c)
-    }
-} else {
-    console.log("Numero no valido, ya mamorrinzon");
-}
+// const isNumberValidated = (number) => number >= 1 && number <= 100 //Funcion de retorno rapido verdadero falso
+// if (isNumberValidated(a) && isNumberValidated(b) && isNumberValidated(c)) {
+//     console.log("Numero valido");
+//     if (a>b && a>c){
+//         console.log("El numero mayor de los tres es " + a)
+//     }   else if
+//         (b>a && b>c)
+//         console.log("El numero mayor de los tres es " +b)
+//         else{
+//             console.log("El numero mayor de los tres es " +c)
+//     }
+// } else {
+//     console.log("Numero no valido, ya mamorrinzon");
+// }
 
     
 //ALGORITMO 2
@@ -83,3 +83,23 @@ if (isNumberValidated(a) && isNumberValidated(b) && isNumberValidated(c)) {
 // } else{
 //     console.log("El numero "+a+" es impar")
 // }
+function adivinar(){
+	let superior = 100;
+	let inferior = 0;
+	let noEncontrado = true;
+	while(noEncontrado){
+		let mid = parseInt( inferior + ((superior-inferior)/2));
+		if(((superior-inferior)/2)<1){
+			noEncontrado = false;
+			alert("Tu número es el "+(parseInt(mid)+1));
+			break;
+		}
+		let res = confirm("Tu número es menor o igual a "+ mid);
+		if(res){
+			superior=mid;
+		}else{
+			inferior=mid;
+		}
+	}
+}
+adivinar();
